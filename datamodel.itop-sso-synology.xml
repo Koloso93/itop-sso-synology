@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itop_design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.2">
+  <classes>
+    <class id="SynologySSOOauth2Client" _delta="define">
+      <parent>Oauth2Client</parent>
+      <properties>
+        <category>bizmodel,searchable</category>
+        <abstract>false</abstract>
+        <key_type>autoincrement</key_type>
+        <db_table>priv_oauth2_client_synologysso</db_table>
+        <db_key_field>id</db_key_field>
+        <db_final_class_field>finalclass</db_final_class_field>
+        <naming>
+          <format>%1$s</format>
+          <attributes>
+            <attribute id="name"/>
+          </attributes>
+        </naming>
+        <display_template/>
+        <icon></icon>
+        <reconciliation>
+          <attributes>
+            <attribute id="name"/>
+            <attribute id="url"/>
+            <attribute id="provider"/>
+          </attributes>
+        </reconciliation>
+      </properties>
+      <fields>
+        <field id="url" xsi:type="AttributeString">
+          <sql>url</sql>
+          <default_value/>
+          <is_null_allowed>false</is_null_allowed>
+        </field>
+      </fields>
+      <event_listeners/>
+      <methods>
+        <method id="GetModelToHybridauthMapping">
+          <static>false</static>
+          <access>public</access>
+          <type>Overload-DBObject</type>
+          <code><![CDATA[
+
+        /**
+        * Provide the mapping between hybridauth and iTop model
+        * @return array
+        */
+        public function GetModelToHybridauthMapping() : array {
+          return ['url' => 'url'];
+        }
+        ]]></code>
+        </method>
+      </methods>
+      <presentation>
+        <details>
+          <items>
+            <item id="col:col1">
+              <rank>10</rank>
+              <items>
+                <item id="fieldset:OAuth2Client:baseinfo">
+                  <rank>10</rank>
+                  <items>
+                    <item id="name">
+                      <rank>10</rank>
+                    </item>
+                    <item id="description">
+                      <rank>20</rank>
+                    </item>
+                    <item id="provider">
+                      <rank>30</rank>
+                    </item>
+                  </items>
+                </item>
+              </items>
+            </item>
+            <item id="col:col2">
+              <rank>10</rank>
+              <items>
+                <item id="fieldset:OAuth2Client:idp_info">
+                  <rank>10</rank>
+                  <items>
+                    <item id="url">
+                      <rank>10</rank>
+                    </item>
+                    <item id="client_id">
+                      <rank>20</rank>
+                    </item>
+                    <item id="client_secret">
+                      <rank>30</rank>
+                    </item>
+                    <item id="scope">
+                      <rank>40</rank>
+                    </item>
+                    <item id="access_token">
+                      <rank>50</rank>
+                    </item>
+                    <item id="access_token_expiration">
+                      <rank>60</rank>
+                    </item>
+                    <item id="refresh_token">
+                      <rank>70</rank>
+                    </item>
+                    <item id="refresh_token_expiration">
+                      <rank>80</rank>
+                    </item>
+                    <item id="token_type">
+                      <rank>90</rank>
+                    </item>
+                    <item id="authorization_state">
+                      <rank>100</rank>
+                    </item>
+                  </items>
+                </item>
+              </items>
+            </item>
+          </items>
+        </details>
+        <search>
+          <items>
+            <item id="name">
+              <rank>10</rank>
+            </item>
+            <item id="url">
+              <rank>12</rank>
+            </item>
+            <item id="provider">
+              <rank>20</rank>
+            </item>
+          </items>
+        </search>
+        <list>
+          <items>
+            <item id="name">
+              <rank>10</rank>
+            </item>
+            <item id="url">
+              <rank>12</rank>
+            </item>
+            <item id="provider">
+              <rank>20</rank>
+            </item>
+          </items>
+        </list>
+      </presentation>
+    </class>
+  </classes>
+</itop_design>
