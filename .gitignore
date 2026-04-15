@@ -1,0 +1,25 @@
+# Backups and temp files
+*.bak
+*.bak_*
+*.tmp
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors / IDEs
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# PHP
+vendor/
+composer.phar
+composer.lock
+
+# Node (unlikely here, but defensive)
+node_modules/
